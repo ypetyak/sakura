@@ -2,9 +2,70 @@ import React from 'react';
 import Chart from 'react-google-charts';
 import Loader from 'react-loader-spinner';
 
-const SearchResult = (props) => {
+import TimeChart from './TimeChart';
 
-    if (!props.tweets) {
+class SearchResult extends React.Component {
+
+    constructor(props) {
+
+    super(props);
+
+    this.state = {
+        averageScore: 0,
+        dateAndScore: []
+        };
+
+        // this.calculateAverage = this.calculateAverage.bind(this)
+    }
+
+    componentDidMount() {
+        if (this.props.tweets) {
+            this.calculateAverage(this.props.tweets)
+            this.calculateTime(this.props.tweets)
+        }
+    }
+
+    calculateAverage = (tweets) => {
+        if (!tweets) {
+            return
+        }
+        let sum = 0;
+        tweets.map(tweet =>
+            sum += tweet.sentimentScore
+        );
+
+        let average = sum / tweets.length
+        let number = average.toString().slice(0, 4)
+
+
+        this.setState({
+            averageScore: number
+        })
+        return
+    }
+
+    calculateTime = (tweets) => {
+
+        let dataArr = []
+        for (let i = 0; i < tweets.length; i++) {
+            let arrTweet = [i, tweets[i].sentimentScore]
+            dataArr.push(arrTweet)
+        }
+
+        dataArr.unshift(['x', 'Risk Score'])
+
+        console.log("array", dataArr);
+        this.setState({
+            dateAndScore: dataArr
+        })
+    }
+
+
+
+    render() {
+    console.log("Our props:", this.props);
+
+    if (!this.props.tweets) {
         return  (
             <div className="loader-div">
             <h2> Analysing...</h2>
@@ -19,39 +80,29 @@ const SearchResult = (props) => {
     }
 
     return (
-        <div>
-        <Chart
-            width={'600px'}
-            height={'400px'}
-            chartType="LineChart"
-            loader={<div>Loading Chart</div>}
-            data={[
-            ['x', 'Water Crisises'],
-            [0, 0],
-            [1, 10],
-            [2, 23],
-            [3, 17],
-            [4, 18],
-            [5, 9],
-            [6, 11],
-            [7, 27],
-            [8, 33],
-            [9, 40],
-            [10, 32],
-            [11, 35],
-            ]}
-            options={{
-            hAxis: {
-              title: 'Time',
-            },
-            vAxis: {
-              title: 'Popularity',
-            },
-            }}
-            rootProps={{ 'data-testid': '1' }}
-            />
+        <div className="results-div">
+            <TimeChart tweets={this.state.dateAndScore} />
+            <div className="score-div">
+                <h2>Your score is:</h2>
+                <div className="number-div">
+                    <p>{this.state.averageScore}</p>
+                </div>
+            </div>
+            <div className="best-tweet-div">
+                <div className="first-tweet">
+                    <h2>Tweet with highest score {this.props.bestTweets.goodTweetScore}:
+                    </h2>
+                    <p>{this.props.bestTweets.goodTweet}</p>
+                    </div>
+                    <div className="second-tweet">
+                    <h2>Tweet with lowest score {this.props.bestTweets.badTweetScore}:
+                    </h2>
+                    <p>{this.props.bestTweets.badTweet}</p>
+                </div>
+            </div>
         </div>
     )
+    }
 }
 
 export default SearchResult;

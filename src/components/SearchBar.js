@@ -36,10 +36,10 @@ class SearchBar extends React.Component {
                     placeholder="Enter Company or Industry"
                 />
                 <div className="buttons-div">
-                    <button>
+                    <button className="button-search">
                         Search
                     </button>
-                    <button onClick={this.onClickRisk}>
+                    <button className="button-details" onClick={this.onClickRisk}>
                         Risk Details
                     </button>
                 </div>
