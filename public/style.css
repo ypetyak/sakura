@@ -1,0 +1,138 @@
+
+
+
+.main-div {
+    width: 100%;
+    height: 100%;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.search-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-div input {
+    width: 800px;
+    height: 45px;
+    border-radius: 25px;
+    border-color: rgb(31,115,135);
+    outline:none;
+    text-align: center;
+    background: none;
+    color: rgb(31,115,135);
+    font-size: 20px;
+}
+
+.form-div label {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: rgb(31,115,135);
+}
+
+.form-div button {
+    width: 250px;
+    height: 35px;
+    margin-top: 30px;
+    color: white;
+    border: 2px solid rgb(31,115,135);
+    border-radius: 25px;
+    background-color: rgb(31,115,135);
+    font-size: 20px;
+}
+
+.form-div button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/*  Landing Page */
+
+.landing-page-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page-div h1 {
+    font-size: 50px;
+    color: rgb(31,115,135);
+}
+
+.landing-page-div p {
+    font-size: 25px;
+    color: rgb(31,115,135);
+}
+
+
+
+
+
+
+/* Wave animation  */
+
+html, body { height: 100%; }
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  overflow: hidden;
+}
+
+.ocean {
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}

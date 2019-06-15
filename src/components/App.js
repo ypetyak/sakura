@@ -1,8 +1,13 @@
 import React from 'react';
+import axios from 'axios';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import twitter from '../api/twitter';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
+import LandingPage from './LandingPage';
+import { TWITTER_KEY, TWITTER_SECRET} from '../secrets.json';
+import history from '../history';
 // import VideoList from './VideoList';
 // import VideoDetail from './VideoDetail';
 
@@ -18,15 +23,22 @@ class App extends React.Component {
 
     onTermSubmit = async (term) => {
         console.log("our term: ", term);
-        const response = await twitter.get('/search', {
-            params: {
-                q: term
-            }
-        });
+        // const response = await twitter.get('/search', {
+        //     params: {
+        //         q: term
+        //     }
+        // });
 
-        this.setState({
-            tweets: "tweet"
-        })
+        // this.setState({
+        //     tweets: "tweet"
+        // })
+
+        axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${term}`)
+        .then(res => {
+            console.log(res);
+            this.setState({ tweets: res.data });
+     })
+     history.push("/results")
     };
 
     onVideoSelect = (video) => {
@@ -39,15 +51,26 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="ui container">
-                <SearchBar
-                    onFormSubmit={this.onTermSubmit}
-                />
-                <div className="ui container">
-                    <SearchResult
-                        tweets={this.state.tweets}
-                    />
-                    <a href="https://twitter.com/intent/tweet?button_hashtag=watercrisis&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #watercrisis</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+            <div className="main-div">
+                <img className="company-logo" src="../media/blue-sakura-logo.png" alt="company logo" />
+                <Router history={history}>
+                    <div>
+                        <SearchBar
+                            onFormSubmit={this.onTermSubmit}
+                        />
+                        <Switch>
+                            <Route path="/" exact component={LandingPage}
+                            />
+                            <Route
+                                path="/results" exact
+                                component={SearchResult}
+                            />
+                        </Switch>
+                    </div>
+                </Router>
+                <div class="ocean">
+                  <div class="wave"></div>
+                  <div class="wave"></div>
                 </div>
             </div>
         )
