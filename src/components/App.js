@@ -52,7 +52,6 @@ class App extends React.Component {
     render() {
         return (
             <div className="main-div">
-                <img className="company-logo" src="../media/blue-sakura-logo.png" alt="company logo" />
                 <Router history={history}>
                     <div>
                         <SearchBar

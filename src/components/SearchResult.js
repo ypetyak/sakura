@@ -1,10 +1,21 @@
 import React from 'react';
 import Chart from 'react-google-charts';
+import Loader from 'react-loader-spinner';
 
 const SearchResult = (props) => {
 
     if (!props.tweets) {
-        return <div> Loading... </div>
+        return  (
+            <div className="loader-div">
+            <h2> Analysing...</h2>
+            <Loader
+                 type="Puff"
+                 color="rgb(128,193,194)"
+                 height="100"
+                 width="100"
+              />
+              </div>
+          )
     }
 
     return (

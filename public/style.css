@@ -9,6 +9,7 @@
 .company-logo {
     width: 100px;
     height: 100px;
+    background: none;
 }
 
 .search-div {
@@ -81,9 +82,21 @@
     color: rgb(31,115,135);
 }
 
+/* Loader  */
 
+.loader-div {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-
+.loader-div h2 {
+    font-size: 25px;
+    color: rgb(31,115,135);
+}
 
 
 /* Wave animation  */
