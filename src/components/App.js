@@ -6,6 +6,7 @@ import twitter from '../api/twitter';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import LandingPage from './LandingPage';
+import RiskDetails from './RiskDetails';
 import { TWITTER_KEY, TWITTER_SECRET} from '../secrets.json';
 import history from '../history';
 // import VideoList from './VideoList';
@@ -63,6 +64,10 @@ class App extends React.Component {
                             <Route
                                 path="/results" exact
                                 component={SearchResult}
+                            />
+                            <Route
+                                path="/about" exact
+                                component={RiskDetails}
                             />
                         </Switch>
                     </div>

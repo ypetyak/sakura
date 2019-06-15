@@ -1,4 +1,5 @@
 import React from 'react';
+import history from '../history';
 
 class SearchBar extends React.Component {
 
@@ -8,6 +9,13 @@ class SearchBar extends React.Component {
         this.setState({
             term: event.target.value
         })
+    }
+
+    onClickRisk = (event) => {
+        event.preventDefault()
+
+        history.push("/about")
+
     }
 
     onFormSubmit = (event) => {
@@ -27,9 +35,14 @@ class SearchBar extends React.Component {
                     value={this.state.term}
                     placeholder="Enter Company or Industry"
                 />
-                <button>
-                    Search
-                </button>
+                <div className="buttons-div">
+                    <button>
+                        Search
+                    </button>
+                    <button onClick={this.onClickRisk}>
+                        Risk Details
+                    </button>
+                </div>
                 </form>
             </div>
         )
