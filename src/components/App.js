@@ -2,20 +2,19 @@ import React from 'react';
 import axios from 'axios';
 import { Router, Route, Switch } from 'react-router-dom';
 
-import twitter from '../api/twitter';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import LandingPage from './LandingPage';
 import RiskDetails from './RiskDetails';
-import { TWITTER_KEY, TWITTER_SECRET} from '../secrets.json';
 import history from '../history';
-// import VideoList from './VideoList';
-// import VideoDetail from './VideoDetail';
+
+const BASE_API_URL = 'http://localhost:8080'
+const API_URL = `${BASE_API_URL}/searchTweets`
 
 class App extends React.Component {
 
     state = {
-        tweets: [],
+        tweetsInfo: [],
     }
 
     componentDidMount() {
@@ -34,10 +33,10 @@ class App extends React.Component {
         //     tweets: "tweet"
         // })
 
-        axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=${term}`)
+        axios.get(`${API_URL}?companyName=${term}`)
         .then(res => {
             console.log(res);
-            this.setState({ tweets: res.data });
+            this.setState({ tweetsInfo: res.data });
      })
      history.push("/results")
     };
