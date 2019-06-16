@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sakura-1560596336079",
+  "private_key_id": "d227d0d334187f0747f6ae38c11d6e59c64c3718",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCQSMOtFSDWMaXw\n/IIt2AotoxafrAHLGtDXc0djFpCNbJALU0ppuYcXL69Fqi8cz3NGuteATqypLSSM\nFH86r3aNqkHz4i/NAeTEAJRedj211DXGxHMe1dkdHss4cX5IwkMVL2TybSLGoDK2\ngflaRqFDsGN/UgHrt8kWMjlFSMzOafVqg8ypZDs5JTTxXBrNtykZgofzNPpN7FdG\n6mzzcVOs1OoXSjgsknNF8meIfDNmUMoDH4RZf5AuurTSOGOKRziW04JB9sxfCwxR\nf7bkgrKKYWcfeZEQePb8Wvowd52c8POPkWLyXY61GQ7zdRaNGrLS/c1arwg2ptgz\nH/5HjN83AgMBAAECggEAHNbmgdSczSN8Wzhlnts1YZzdG0pKy3mPL9ljdftfJl2C\nRzk9QPer+Gb4HjEfnJ8cmBElnQhcu64BxZwdODI1PKjA6QoXat9Lhh/liCITQKJr\no1DF/+5XqNnsXdpVlx55QSVJhKlqz4/awx8ko7ZFap25rYvLRX3lTDH6v44HHeTE\nK7TtpCU/HJN/j5mpLuxqwL47H/itIm1sT8GknBd+EpaQE/HkB02S3jO9lmPxyWig\nJ9g9lCk5ETU+B9BT+Xgc5GItxfiPpiJvwNu2kXvAHd+zJYGCdlNPHWcu3MBX9019\nJQHjFYTVpEQyV/EOJ4qDvPUo7yQ55oMws4LwWSJViQKBgQDBR+fjXYGqTtTZbN7Q\nIqn9G/bQfdw6EOuUbUzTfG35aOj1XCLeqpbGb8ZwuqJF0AZNfDgP1teL2LZjd52e\nwdKJXIr7zYXUOjpWgIrgjSub/eJT4E4je8o6U/zPaG1dY6Bsin9xy5aSIWkbAQTH\ndrSNCmaMZKqrX/p5AvvgoYxcSQKBgQC/GqS34ZWkD5RpkRwUoYC7/OazTTW1cFwy\nZ/69PjhM6AJ0yN+R2HysYblooNB+yFx0aFTgWV3MiHhbnN3w8Zxv5kcJcmR9Ktew\nbSv/gQxES8FBmRyshXkX44cTG06+cBB8pwekJSqmw0brGerAhXoB39RCLTFb5Vaf\nuVaMb0xffwKBgA0GC1oGsvYG2dDMxTbBHzMu7zKdSHmhKj6WHtchS0fDCe9+hdr7\nI627WmO+L7EEk2glNqHamCuULrYFGVnZNZaL5dGRx7LFOakagEEhQg8AzH9aXemG\nLdpAToirQLNKQ0UNEAla7opqNerb5raKCSB30vEi11002mvNB6vbNtoBAoGBAI8f\n6juZZNRRosqJlmlRJ7QjTbj923q+4x4RSvT6s3nNzYEfrGlzpLQKIK1eu6gocS3x\nsZew9pInp1SdoI9CtPINmihWFzKzMoT8zpX2VXSU8/EoNhRzhmTA0DocGpaAIajq\nA8wI1e+9ktCjQXDcxqq+sx648B2uHnlTeqGE/cMLAoGATlU4wec7u8eACKsHyDLI\nu+/Bp8VOQ04lfDZqUXZXr/bJihermlPcCFCRaMDbh3wzU1cnFzPuk2MfhUoWFIRu\nvPGG1m4lrA2Ykeh+tE2xM5YxdJVEnaGQ7xQMF5s/lCU/GWu9Zo5mYLC+B8YcVbCt\nxp25urE+5bfXO2aGHCSl73s=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sakura@sakura-1560596336079.iam.gserviceaccount.com",
+  "client_id": "107640981717262750790",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sakura%40sakura-1560596336079.iam.gserviceaccount.com"
+}
