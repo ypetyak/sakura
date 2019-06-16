@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
         return(
             <div className="search-div">
                 <form onSubmit={this.onFormSubmit} className="form-div">
-                <label> Social Media Analysis: </label>
+                <label> The Social Media Water Reputation Risk Tool: </label>
                 <input
                     type="text"
                     onChange={this.onInputChange}
@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
                         Search
                     </button>
                     <button className="button-details" onClick={this.onClickRisk}>
-                        Risk Details
+                        Details
                     </button>
                 </div>
                 </form>
